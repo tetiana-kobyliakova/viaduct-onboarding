@@ -1,14 +1,13 @@
-import React from 'react';
-import './App.css';
-import Container from './components/Container'
-import Widget from './components/Widget';
+import React from "react";
+import "./App.css";
+import Container from "./components/Container";
+import Widget from "./components/photo-widget";
 
 function App() {
   return (
     <Container>
       <h1>Widget</h1>
-      <Widget/>
-
+      <Widget />
     </Container>
   );
 }

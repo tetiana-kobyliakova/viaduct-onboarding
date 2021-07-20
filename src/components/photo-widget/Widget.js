@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "./Widget.module.css";
-import photo1 from "../images/photo1.jpeg";
-import photo2 from "../images/photo2.jpeg";
+import photo1 from "../../images/photo1.jpeg";
+import photo2 from "../../images/photo2.jpeg";
 
 const Widget = () => {
   const [MousePosition, setMousePosition] = useState({

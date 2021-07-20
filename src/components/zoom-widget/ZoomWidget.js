@@ -52,6 +52,7 @@ const ZoomWidget = () => {
     setMousePosition({ left: ev.pageX, top: ev.pageY });
     setLargeCoord(getLargeImageCoord());
     setShowGlass(true);
+
     if (
       ev.pageX > photoDimentions.x + photoDimentions.width ||
       ev.pageX < photoDimentions.x ||
@@ -75,8 +76,8 @@ const ZoomWidget = () => {
           ref={photoRef}
           className={styles.small}
           src={smallImage}
-          width="960px"
-          height="600px"
+          width="960"
+          height="600"
         />
         {showGlass && (
           <div
@@ -101,33 +102,4 @@ const ZoomWidget = () => {
   );
 };
 
-/* const Glass = ({ leftOffset, topOffset }) => {
-  return (
-    <div
-      className={styles.glass}
-      style={{ left: leftOffset, top: topOffset }}
-    ></div>
-  );
-}; */
-
 export default ZoomWidget;
-
-/* const leftOffset = MousePosition.left - leftPhoto + "px";
-    const topOffset = MousePosition.top - topPhoto + "px";
-    setLeftOffset(leftOffset);
-    setRightOffset(topOffset);
-    console.log(leftOffset);
-    console.log(topOffset); */
-
-/*  if (
-      MousePosition.left > photoDimentions.x ||
-      MousePosition.top > photoDimentions.y ||
-      MousePosition.left < photoDimentions.x + photoDimentions.width ||
-      MousePosition.top < photoDimentions.y + photoDimentions.height
-    ) {
-      setShowGlass(true);
-    } else {
-      setShowGlass(false);
-    }
-
-     */

@@ -1,0 +1,43 @@
+.container {
+  position: relative;
+  width: 840px;
+  height: 630px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.box1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: fit-content;
+  border-right: 2px dashed rgba(223, 215, 215, 0.5);
+}
+
+.box1inner {
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.box2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.box1::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -20px;
+  width: 40px;
+  height: 140px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(223, 215, 215, 0.5);
+  border-radius: 20px;
+  z-index: 20;
+}

@@ -31,7 +31,7 @@ const Widget = () => {
     <div
       className={styles.container}
       ref={containerRef}
-      onMouseMove={(ev) => handleMouseMove(ev)}
+      onMouseMove={handleMouseMove}
     >
       <div className={styles.box1}>
         <div className={styles.box1inner} style={{ width: photoWidth }}>

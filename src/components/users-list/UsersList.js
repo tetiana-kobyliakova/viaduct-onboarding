@@ -2,7 +2,8 @@ import React from "react";
 import userData from "./userData.json";
 import styles from "./UsersList.module.css";
 import Select from "./Select";
-import Table from "./Table";
+import Table from "./Table/Table";
+import Button from "./Button";
 
 const createUsers = () => {
   const keys = Object.keys(userData);
@@ -54,17 +55,14 @@ const UsersList = () => {
     }
   }, [filteredByGender, isAscending]);
 
-  console.log(gender);
+  const changeOrder = () => {
+    setIsAscending(!isAscending);
+  };
   return (
     <>
       <h1 className={styles.title}>Users list</h1>
       <div className={styles.wrapper}>
-        <button
-          className={styles.button}
-          onClick={() => setIsAscending(!isAscending)}
-        >
-          Change order to {isAscending ? "descending" : "ascending"}
-        </button>
+        <Button isAscending={isAscending} changeOrder={changeOrder} />
         <Select
           gender={gender}
           onHandleChange={handleChange}

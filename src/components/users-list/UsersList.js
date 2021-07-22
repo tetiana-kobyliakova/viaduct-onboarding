@@ -2,7 +2,7 @@ import React from "react";
 import userData from "./userData.json";
 import styles from "./UsersList.module.css";
 import Select from "./Select";
-import Table from "./Table/Table";
+import Table from "./Table";
 import Button from "./Button";
 
 const createUsers = () => {

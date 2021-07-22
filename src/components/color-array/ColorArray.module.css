@@ -9,3 +9,7 @@
   height: 180px;
   margin-bottom: 20px;
 }
+
+.highlited {
+  opacity: 0.5;
+}

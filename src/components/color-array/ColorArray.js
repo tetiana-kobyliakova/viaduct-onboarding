@@ -1,15 +1,7 @@
 import React from "react";
 import styles from "./ColorArray.module.css";
-import { cloneDeep, shuffle, range, get } from "lodash";
+import { shuffle, range, get } from "lodash";
 import classnames from "classnames";
-// function shuffleArray(array) {
-//   const newArr = [...array];
-//   for (let i = newArr.length - 1; i > 0; i--) {
-//     const j = Math.floor(Math.random() * (i + 1));
-//     [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
-//   }
-//   return newArr;
-// }
 
 const generateColorsMatrix = () => {
   const colors = [
@@ -20,11 +12,7 @@ const generateColorsMatrix = () => {
     { color: "orange", isHighlighted: false },
     { color: "steelblue", isHighlighted: false },
   ];
-  // const newColors = [];
-  // for (let i = 0; i < 6; i += 1) {
-  //   newColors.push(shuffleArray(cloneDeep(colors)));
-  // }
-  // return newColors;
+
   const newColors = range(6);
   return newColors.map(() => shuffle(colors));
 };
@@ -62,9 +50,6 @@ const ColorArray = () => {
 
   const highlightBoxes = (idx1, idx2) => {
     const color = newColors[idx1][idx2].color;
-    // arr[idx1][idx2].opacity = 0.5;
-    // const maxVerticalIndex = arr.length - 1;
-    // const maxHorizontalIndex = arr[0].length - 1;
 
     const highlightedIndexes = findColors({
       matrixArr: newColors,
@@ -93,7 +78,7 @@ const ColorArray = () => {
             key={index}
             className={classnames([
               styles.block,
-              { [styles.highlited]: i.isHighlighted },
+              { [styles.highlighted]: i.isHighlighted },
             ])}
             style={{ backgroundColor: i.color }}
             onClick={() => highlightBoxes(idx, index)}

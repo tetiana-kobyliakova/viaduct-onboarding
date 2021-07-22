@@ -76,6 +76,7 @@ const ZoomWidget = () => {
           ref={photoRef}
           className={styles.small}
           src={smallImage}
+          alt=""
           width="960"
           height="600"
         />
@@ -89,6 +90,7 @@ const ZoomWidget = () => {
           >
             <img
               src={largeImage}
+              alt=""
               style={{
                 transform: `translate(-${largeCoord.left - 4}%, -${
                   largeCoord.top - 6

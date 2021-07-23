@@ -40,20 +40,33 @@ const UsersList = () => {
     setGender(e.target.value);
   };
 
-  const filteredByGender = React.useMemo(() => {
-    if (gender === "all") {
+  const [lastName, setLastName] = React.useState("");
+  const onInputChange = (e) => {
+    setLastName(e.target.value);
+  };
+
+  const filtered = React.useMemo(() => {
+    if (gender === "all" && !lastName) {
       return users;
     }
-    return users.filter((user) => user.gender === gender);
-  }, [users, gender]);
+    const filter = lastName.toLowerCase();
+
+    return users.filter((user) => {
+      const isGenderValid = gender === "all" || user.gender === gender;
+      const userIncludesFilter =
+        !lastName || user.lastName.toLowerCase().includes(filter);
+
+      return isGenderValid && userIncludesFilter;
+    });
+  }, [users, gender, lastName]);
 
   const sortedUsers = React.useMemo(() => {
     if (isAscending) {
-      return filteredByGender;
+      return filtered;
     } else {
-      return [...filteredByGender].reverse();
+      return [...filtered].reverse();
     }
-  }, [filteredByGender, isAscending]);
+  }, [filtered, isAscending]);
 
   const changeOrder = () => {
     setIsAscending(!isAscending);
@@ -63,6 +76,19 @@ const UsersList = () => {
       <h1 className={styles.title}>Users list</h1>
       <div className={styles.wrapper}>
         <Button isAscending={isAscending} changeOrder={changeOrder} />
+        <div>
+          <label htmlFor="lastNameInput">Search by last name</label>
+          <input
+            id="lastNameInput"
+            className={styles.lastNameInput}
+            value={lastName}
+            onChange={onInputChange}
+            // onBlur={() => setLastName("")}
+          />
+          <button className={styles.clear} onClick={() => setLastName("")}>
+            clear
+          </button>
+        </div>
         <Select
           gender={gender}
           onHandleChange={handleChange}

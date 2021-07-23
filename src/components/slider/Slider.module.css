@@ -1,0 +1,66 @@
+.sliderContainer {
+  width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+.leftButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.rightButton {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.leftButton,
+.rightButton {
+  cursor: pointer;
+}
+
+.btnDisabled {
+  cursor: auto;
+}
+.btnDisabled svg {
+  fill: grey;
+}
+.slider {
+  position: relative;
+  margin: 0 auto;
+  width: 840px;
+  height: 630px;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  position: absolute;
+  transition: 0.5s;
+}
+
+.dots {
+  display: flex;
+  width: 120px;
+  margin: 0 auto;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgb(205, 197, 197);
+}
+
+.dotActive {
+  background: rgb(19, 19, 19);
+}

@@ -6,6 +6,9 @@ import img3 from "../../images/photo_3.jpg";
 import classnames from "classnames";
 import sprite from "../../images/sprite.svg";
 
+const slides = [img1, img2, img3];
+const maxSlideIndex = slides.length - 1;
+
 const Slider = () => {
   const [slideNumber, setSlideNumber] = React.useState(0);
 
@@ -36,9 +39,9 @@ const Slider = () => {
         <button
           className={classnames([
             styles.rightButton,
-            { [styles.btnDisabled]: slideNumber === 2 },
+            { [styles.btnDisabled]: slideNumber === maxSlideIndex },
           ])}
-          disabled={slideNumber === 2}
+          disabled={slideNumber === maxSlideIndex}
           onClick={onRightBtnClick}
         >
           <svg width="50" height="50">
@@ -47,15 +50,11 @@ const Slider = () => {
         </button>
         <div className={styles.slider}>
           <div className={styles.slides} style={{ left: -slideNumber * 840 }}>
-            <div>
-              <img src={img1} alt="" />
-            </div>
-            <div>
-              <img src={img2} alt="" />
-            </div>
-            <div>
-              <img src={img3} alt="" />
-            </div>
+            {slides.map((img) => (
+              <div key={img}>
+                <img src={img} alt="" />
+              </div>
+            ))}
           </div>
         </div>
       </div>

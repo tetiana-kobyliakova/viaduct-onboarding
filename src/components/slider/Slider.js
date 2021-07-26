@@ -3,14 +3,18 @@ import styles from "./Slider.module.css";
 import img1 from "../../images/photo1.jpeg";
 import img2 from "../../images/photo2.jpeg";
 import img3 from "../../images/photo_3.jpg";
+import img4 from "../../images/photo4.jpg";
 import classnames from "classnames";
 import sprite from "../../images/sprite.svg";
 
-const slides = [img1, img2, img3];
-const maxSlideIndex = slides.length - 1;
+const slidesData = [img1, img2, img3, img4];
 
-const Slider = () => {
+const Slider = ({ slides = slidesData }) => {
   const [slideNumber, setSlideNumber] = React.useState(0);
+
+  const maxSlideIndex = React.useMemo(() => {
+    return slides.length - 1;
+  }, [slides]);
 
   const onLeftBtnClick = () => {
     setSlideNumber((prev) => prev - 1);

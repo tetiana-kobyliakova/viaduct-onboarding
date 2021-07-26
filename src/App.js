@@ -6,7 +6,8 @@ import Container from "./components/Container";
 // import ZoomWidget from "./components/zoom-widget";
 //import UsersList from "./components/users-list";
 //import Slider from "./components/slider";
-import Form from "./components/form-validation";
+//import Form from "./components/form-validation";
+import Form2 from "./components/form-validation2";
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
       {/* <ColorArray /> */}
       {/* <ZoomWidget /> */}
       {/* <Widget /> */}
-      <Form />
+      {/* <Form /> */}
+      <Form2 />
     </Container>
   );
 }

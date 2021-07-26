@@ -3,21 +3,7 @@ import styles from "./Form.module.css";
 import ErrorName from "./ErrorName";
 import ErrorAmount from "./ErrorAmount";
 
-// const formData = [
-//   {
-//     name: "lastName",
-//     type: "text",
-//     validationRules: [(value) => !value],
-//     value: "",
-//   },
-// ];
-
 const Form = () => {
-  //   const [formState, setFormState] = React.useState({});
-  //   const onChangeInput = (e) => {
-  //     setFormState({ ...formState, [e.target.name]: e.target.value });
-  //   };
-
   const [name, setName] = React.useState("");
   const onChangeName = (e) => {
     setName(e.target.value);

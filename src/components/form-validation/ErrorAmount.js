@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Form.module.css";
 
-const Error = ({ error }) => {
+const ErrorAmount = ({ error }) => {
   return (
     <div className={styles.errorBlockAmount}>
       <p className={styles.error}>{error}</p>
@@ -9,4 +9,4 @@ const Error = ({ error }) => {
   );
 };
 
-export default Error;
+export default ErrorAmount;

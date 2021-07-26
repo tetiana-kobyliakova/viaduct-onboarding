@@ -17,17 +17,7 @@ const createUsers = () => {
   return users;
 };
 
-const getAllGenders = (arr) => {
-  const result = [];
-  for (const str of arr) {
-    if (!result.includes(str)) {
-      result.push(str);
-    }
-  }
-  return result;
-};
-
-const allGenders = [...getAllGenders(userData.gender), "all"];
+const allGenders = [...new Set(userData.gender), "all"];
 
 const UsersList = () => {
   const [users, setUsers] = React.useState([]);

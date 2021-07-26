@@ -22,7 +22,7 @@ const allGenders = [...new Set(userData.gender), "all"];
 
 const UsersList = () => {
   const [users, setUsers] = React.useState([]);
-  React.useEffect(() => setUsers(createUsers()), [createUsers]);
+  React.useEffect(() => setUsers(createUsers()), []);
   console.log(users);
 
   const [isAscending, setIsAscending] = React.useState(true);

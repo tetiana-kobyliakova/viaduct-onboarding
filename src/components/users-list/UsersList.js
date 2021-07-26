@@ -7,31 +7,23 @@ import Button from "./Button";
 
 const createUsers = () => {
   const keys = Object.keys(userData);
-  const users = userData.id.map((item, index) => {
-    const obj = {};
-    for (const key of keys) {
-      obj[key] = userData[key][index];
-    }
-    return obj;
-  });
+  const users = userData.id.reduce((acc, _, index) => {
+    const obj = keys.reduce((acc, key) => {
+      acc[key] = userData[key][index];
+      return acc;
+    }, {});
+    acc.push(obj);
+    return acc;
+  }, []);
   return users;
 };
 
-const getAllGenders = (arr) => {
-  const result = [];
-  for (const str of arr) {
-    if (!result.includes(str)) {
-      result.push(str);
-    }
-  }
-  return result;
-};
-
-const allGenders = [...getAllGenders(userData.gender), "all"];
+const allGenders = [...new Set(userData.gender), "all"];
 
 const UsersList = () => {
   const [users, setUsers] = React.useState([]);
-  React.useEffect(() => setUsers(createUsers()), []);
+  React.useEffect(() => setUsers(createUsers()), [createUsers]);
+  console.log(users);
 
   const [isAscending, setIsAscending] = React.useState(true);
 

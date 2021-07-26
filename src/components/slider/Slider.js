@@ -59,14 +59,14 @@ const Slider = () => {
         </div>
       </div>
       <div className={styles.dots}>
-        {[0, 1, 2].map((item) => (
+        {slides.map((item, index) => (
           <div
             className={classnames([
               styles.dot,
-              { [styles.dotActive]: item === slideNumber },
+              { [styles.dotActive]: index === slideNumber },
             ])}
             key={item}
-            onClick={() => setSlideNumber(item)}
+            onClick={() => setSlideNumber(index)}
           ></div>
         ))}
       </div>

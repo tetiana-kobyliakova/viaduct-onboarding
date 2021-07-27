@@ -51,9 +51,9 @@ const Row = ({ user, nested }) => {
     <>
       <tr key={user.id}>
         {nested === 1 ? (
-          <td style={{ color: "red" }}>{user.id}</td>
+          <td style={{ color: "red", paddingLeft: "20px" }}>{user.id}</td>
         ) : nested === 2 ? (
-          <td style={{ color: "green" }}>{user.id}</td>
+          <td style={{ color: "green", paddingLeft: "40px" }}>{user.id}</td>
         ) : (
           <td>{user.id}</td>
         )}

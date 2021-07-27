@@ -47,8 +47,3 @@ export const TabItem = ({ label, index, onClick }) => {
     </li>
   );
 };
-
-// className={classnames([
-//         styles.tabItem,
-//         { [styles.tabItemActive]: index === activeTab },
-//       ])}

@@ -1,31 +1,35 @@
 import React from "react";
 import styles from "./Tabs.module.css";
-import classnames from "classnames";
 
 export const Tabs = ({ children }) => {
-  const [activeTab, setActiveTab] = React.useState(children[0].props.label);
+  const [activeTab, setActiveTab] = React.useState(0);
   const onClickTabItem = (tab) => {
     setActiveTab(tab);
   };
 
+  console.log(activeTab);
   return (
     <div>
-      <ul className={styles.tabs}>
-        {children.map((child) => {
-          const { label } = child.props;
-          return (
-            <TabItem
-              activeTab={activeTab}
-              key={label}
-              label={label}
-              onClick={onClickTabItem}
-            />
-          );
-        })}
-      </ul>
+      <div className={styles.wrapper}>
+        <ul className={styles.tabs}>
+          {children.map((child, index) => {
+            const { label } = child.props;
+            return (
+              <TabItem
+                activeTab={activeTab}
+                key={label}
+                label={label}
+                index={index}
+                onClick={onClickTabItem}
+              />
+            );
+          })}
+        </ul>
+        <div className={styles.line} style={{ left: activeTab * 150 }}></div>
+      </div>
       <div className={styles.tabContent}>
-        {children.map((child) => {
-          if (child.props.label !== activeTab) return null;
+        {children.map((child, index) => {
+          if (index !== activeTab) return null;
           return child.props.children;
         })}
       </div>
@@ -33,19 +37,18 @@ export const Tabs = ({ children }) => {
   );
 };
 
-export const TabItem = ({ activeTab, label, onClick }) => {
+export const TabItem = ({ label, index, onClick }) => {
   const onTabClick = () => {
-    onClick(label);
+    onClick(index);
   };
   return (
-    <li
-      onClick={onTabClick}
-      className={classnames([
-        styles.tabItem,
-        { [styles.tabItemActive]: label === activeTab },
-      ])}
-    >
+    <li onClick={onTabClick} className={styles.tabItem}>
       {label.toUpperCase()}
     </li>
   );
 };
+
+// className={classnames([
+//         styles.tabItem,
+//         { [styles.tabItemActive]: index === activeTab },
+//       ])}

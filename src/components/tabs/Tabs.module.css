@@ -1,0 +1,24 @@
+.tabs {
+  list-style-type: none;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.tabItem {
+  font-size: 30px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.tabItemActive {
+  text-decoration: underline;
+}
+
+.contentTitle {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.title {
+  margin-top: 20px;
+}

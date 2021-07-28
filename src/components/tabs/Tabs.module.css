@@ -2,11 +2,13 @@
   list-style-type: none;
   display: flex;
   margin-bottom: 20px;
+  width: fit-content;
 }
 
 .tabItem {
   font-size: 30px;
   width: 150px;
+  text-transform: uppercase;
   text-align: center;
   cursor: pointer;
 }
@@ -26,6 +28,7 @@
 
 .wrapper {
   position: relative;
+  width: fit-content;
 }
 
 .line {

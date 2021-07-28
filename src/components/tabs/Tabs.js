@@ -19,10 +19,7 @@ export const Tabs = ({ children }) => {
     return tabs.current.getBoundingClientRect().width;
   };
 
-  const isArray = React.useMemo(
-    () => React.Children.count(children) > 1,
-    [children]
-  );
+  const isArray = React.useMemo(() => Array.isArray(children), [children]);
 
   return (
     <div>

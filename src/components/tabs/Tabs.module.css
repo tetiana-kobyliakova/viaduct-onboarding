@@ -1,0 +1,45 @@
+.tabs {
+  list-style-type: none;
+  display: flex;
+  margin-bottom: 20px;
+  width: fit-content;
+}
+
+.tabItem {
+  font-size: 30px;
+  width: 150px;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tabItemActive {
+  text-decoration: underline;
+}
+
+.contentTitle {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.title {
+  margin-top: 20px;
+}
+
+.wrapper {
+  position: relative;
+  width: fit-content;
+}
+
+.line {
+  position: absolute;
+  bottom: -10px;
+  width: 150px;
+  height: 3px;
+  background-color: #000;
+  transition: 0.5s;
+}
+
+.tabContent {
+  padding-top: 40px;
+}

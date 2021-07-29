@@ -8,7 +8,8 @@ import Container from "./components/Container";
 //import Slider from "./components/slider";
 //import Form from "./components/form-validation";
 //import Form2 from "./components/form-validation2";
-import Tabs from "./components/tabs";
+//import Tabs from "./components/tabs";
+import Pagination from "./components/pagination";
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
       {/* <Widget /> */}
       {/* <Form /> */}
       {/* <Form2 /> */}
-      <Tabs />
+      {/* <Tabs /> */}
+      <Pagination />
     </Container>
   );
 }

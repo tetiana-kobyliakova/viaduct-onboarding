@@ -1,0 +1,50 @@
+.title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.container {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.elem {
+  margin: 5px;
+  color: rgb(36, 108, 198);
+  cursor: pointer;
+}
+
+.elemActive {
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  color: rgb(36, 108, 198);
+  border: 1px solid rgb(36, 108, 198);
+}
+.button svg {
+  fill: rgb(36, 108, 198);
+}
+
+.buttonDisabled {
+  color: grey;
+  border: 1px solid grey;
+}
+
+.buttonDisabled svg {
+  fill: grey;
+}

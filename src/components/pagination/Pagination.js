@@ -1,4 +1,3 @@
-import { declareTypeAlias } from "@babel/types";
 import React from "react";
 import styles from "./Pagination.module.css";
 import classnames from "classnames";

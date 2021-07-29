@@ -65,8 +65,6 @@ const Pagination = ({ pages = 5, currentPage = 1 }) => {
     return arr;
   }, [currentIndex, paginationArr]);
 
-  console.log(paginationArr);
-  console.log(arrayToDisplay);
   console.log(currentIndex);
 
   const onNextClick = () => {

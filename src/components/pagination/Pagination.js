@@ -184,13 +184,3 @@ const Pagination = ({ pages = 5, currentPage = 1 }) => {
 };
 
 export default Pagination;
-
-/*paginationArr.length === 5
-                  ? currentIndex < 2
-                  : currentIndex < 3,
-    
-    paginationArr.length === 5
-                  ? currentIndex > paginationArr.length - 3
-                  : currentIndex > paginationArr.length - 4,
-                  
-                  */

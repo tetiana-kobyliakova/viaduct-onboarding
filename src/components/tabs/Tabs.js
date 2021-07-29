@@ -19,49 +19,40 @@ export const Tabs = ({ children }) => {
     return tabs.current.getBoundingClientRect().width;
   };
 
-  const isArray = React.useMemo(() => Array.isArray(children), [children]);
+  const childrenList = React.useMemo(
+    () => (Array.isArray(children) ? children : [children]),
+    [children]
+  );
 
   return (
     <div>
       <div className={styles.wrapper}>
         <ul className={styles.tabs} ref={tabs}>
-          {isArray ? (
-            children.map((child, index) => {
-              const { label } = child.props;
-              return (
-                <TabItem
-                  activeTab={activeTab}
-                  key={label}
-                  label={label}
-                  index={index}
-                  onClick={onClickTabItem}
-                />
-              );
-            })
-          ) : (
-            <TabItem
-              activeTab={activeTab}
-              key={children.props.label}
-              label={children.props.label}
-              index={0}
-              onClick={onClickTabItem}
-            />
-          )}
+          {childrenList.map((child, index) => {
+            const { label } = child.props;
+            return (
+              <TabItem
+                activeTab={activeTab}
+                key={label}
+                label={label}
+                index={index}
+                onClick={onClickTabItem}
+              />
+            );
+          })}
         </ul>
         <div
           className={styles.line}
           style={{
-            left: isArray ? (activeTab * tabsWidth) / children.length : 0,
+            left: (activeTab * tabsWidth) / childrenList.length,
           }}
         ></div>
       </div>
       <div className={styles.tabContent}>
-        {isArray
-          ? children.map((child, index) => {
-              if (index !== activeTab) return null;
-              return child.props.children;
-            })
-          : children.props.children}
+        {childrenList.map((child, index) => {
+          if (index !== activeTab) return null;
+          return child;
+        })}
       </div>
     </div>
   );

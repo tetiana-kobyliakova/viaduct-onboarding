@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./Tabs.module.css";
 import { Tabs } from "./Tabs";
-import { TabItem } from "./Tabs";
+// import { div } from "./Tabs";
 
 const TabsContainer = () => {
   return (
     <>
       <h1 className={styles.title}>Tabs</h1>
       <Tabs>
-        <TabItem label="first">
+        <div label="first">
           <p className={styles.contentTitle}>First tab content </p>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -18,8 +18,8 @@ const TabsContainer = () => {
             only five centuries, but also the leap into electronic typesetting,
             remaining essentially unchanged.
           </p>
-        </TabItem>
-        <TabItem label="second">
+        </div>
+        <div label="second">
           <p className={styles.contentTitle}>Second tab content</p>
           <p>
             It is a long established fact that a reader will be distracted by
@@ -33,8 +33,8 @@ const TabsContainer = () => {
             years, sometimes by accident, sometimes on purpose (injected humour
             and the like).
           </p>
-        </TabItem>
-        <TabItem label="third">
+        </div>
+        <div label="third">
           <p className={styles.contentTitle}>Third tab content</p>
           <p>
             There are many variations of passages of Lorem Ipsum available, but
@@ -50,8 +50,8 @@ const TabsContainer = () => {
             Ipsum is therefore always free from repetition, injected humour, or
             non-characteristic words etc.
           </p>
-        </TabItem>
-        <TabItem label="fourth">
+        </div>
+        <div label="fourth">
           <p className={styles.contentTitle}>Fourth tab content</p>
           <p>
             Contrary to popular belief, Lorem Ipsum is not simply random text.
@@ -67,8 +67,8 @@ const TabsContainer = () => {
             Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
             amet..", comes from a line in section 1.10.32.
           </p>
-        </TabItem>
-        <TabItem label="fifth">
+        </div>
+        <div label="fifth">
           <p className={styles.contentTitle}>Fifth tab content</p>
           <p>
             Contrary to popular belief, Lorem Ipsum is not simply random text.
@@ -84,7 +84,7 @@ const TabsContainer = () => {
             Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
             amet..", comes from a line in section 1.10.32.
           </p>
-        </TabItem>
+        </div>
       </Tabs>
     </>
   );

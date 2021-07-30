@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./PagesPagination.module.css";
 import Page from "./Page";
 import Pagination from "./Pagination";
 import api from "./api";
@@ -25,7 +26,7 @@ const PagesPagination = () => {
   console.log(users);
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       <h1>Pages pagination</h1>
       <Page number={currentPage} usersList={users} isLoading={isLoading} />
       <Pagination

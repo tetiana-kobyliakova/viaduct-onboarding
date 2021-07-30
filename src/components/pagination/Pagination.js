@@ -13,7 +13,6 @@ const createArr = (p) => {
 
 const Pagination = ({ pages = 20, currentPage = 1, onPageChange }) => {
   const [paginationArr, setPaginationArr] = React.useState([]);
-  //const [currentIndex, setCurrentIndex] = React.useState(0);
 
   const currentIndex = React.useMemo(() => {
     return currentPage - 1;
@@ -56,8 +55,6 @@ const Pagination = ({ pages = 20, currentPage = 1, onPageChange }) => {
     return arr;
   }, [currentIndex, paginationArr]);
 
-  // console.log(currentIndex);
-  // console.log(arrayToDisplay);
   console.log(currentPage);
 
   const onNextClick = () => {

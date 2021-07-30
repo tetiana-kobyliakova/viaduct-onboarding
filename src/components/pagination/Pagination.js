@@ -11,14 +11,16 @@ const createArr = (p) => {
   return arr;
 };
 
-const Pagination = ({ pages = 20, currentPage = 1 }) => {
+const Pagination = ({ pages = 20, currentPage = 1, onPageChange }) => {
   const [paginationArr, setPaginationArr] = React.useState([]);
-  const [currentIndex, setCurrentIndex] = React.useState(0);
+  //const [currentIndex, setCurrentIndex] = React.useState(0);
 
+  const currentIndex = React.useMemo(() => {
+    return currentPage - 1;
+  }, [currentPage]);
   React.useEffect(() => {
     setPaginationArr(createArr(pages));
-    setCurrentIndex(currentPage - 1);
-  }, [currentPage, pages]);
+  }, [pages]);
 
   const arrayToDisplay = React.useMemo(() => {
     const arr = [...paginationArr];
@@ -54,35 +56,23 @@ const Pagination = ({ pages = 20, currentPage = 1 }) => {
     return arr;
   }, [currentIndex, paginationArr]);
 
-  console.log(currentIndex);
-  console.log(arrayToDisplay);
+  // console.log(currentIndex);
+  // console.log(arrayToDisplay);
+  console.log(currentPage);
 
   const onNextClick = () => {
-    setCurrentIndex((prev) => {
-      if (prev === paginationArr.length - 1) {
-        return prev;
-      } else {
-        return prev + 1;
-      }
-    });
+    onPageChange(currentPage + 1);
   };
 
   const onPrevClick = () => {
-    setCurrentIndex((prev) => {
-      if (prev === 0) {
-        return prev;
-      } else {
-        return prev - 1;
-      }
-    });
+    onPageChange(currentPage - 1);
   };
 
   const onElementClick = (i) => {
-    setCurrentIndex(i);
+    onPageChange(i + 1);
   };
   return (
     <>
-      <h1>Pagination</h1>
       <div className={styles.container}>
         <button
           onClick={onPrevClick}

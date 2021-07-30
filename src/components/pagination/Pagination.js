@@ -11,7 +11,7 @@ const createArr = (p) => {
   return arr;
 };
 
-const Pagination = ({ pages = 5, currentPage = 1 }) => {
+const Pagination = ({ pages = 20, currentPage = 1 }) => {
   const [paginationArr, setPaginationArr] = React.useState([]);
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
@@ -44,16 +44,6 @@ const Pagination = ({ pages = 5, currentPage = 1 }) => {
       arr[len - 1] = null;
     }
 
-    if (len !== 5) {
-      if (currentIndex === 2) {
-        arr[3] = null;
-      }
-
-      if (currentIndex === len - 3) {
-        arr[len - 4] = null;
-      }
-    }
-
     for (let i = 0; i < currentIndex - 1; i++) {
       arr[i] = null;
     }
@@ -65,6 +55,7 @@ const Pagination = ({ pages = 5, currentPage = 1 }) => {
   }, [currentIndex, paginationArr]);
 
   console.log(currentIndex);
+  console.log(arrayToDisplay);
 
   const onNextClick = () => {
     setCurrentIndex((prev) => {
@@ -91,7 +82,7 @@ const Pagination = ({ pages = 5, currentPage = 1 }) => {
   };
   return (
     <>
-      <h1 className={styles.title}>Pagination</h1>
+      <h1>Pagination</h1>
       <div className={styles.container}>
         <button
           onClick={onPrevClick}

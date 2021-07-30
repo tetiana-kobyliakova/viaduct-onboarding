@@ -68,6 +68,7 @@ const ZoomWidget = () => {
 
   return (
     <>
+      <h1>Zoom widget</h1>
       <div
         className={styles["img-thumb"]}
         onMouseMove={(ev) => handleMouseMove(ev)}

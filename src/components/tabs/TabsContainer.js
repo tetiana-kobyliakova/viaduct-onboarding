@@ -6,7 +6,7 @@ import { Tabs } from "./Tabs";
 const TabsContainer = () => {
   return (
     <>
-      <h1 className={styles.title}>Tabs</h1>
+      <h1>Tabs</h1>
       <Tabs>
         <div label="first">
           <p className={styles.contentTitle}>First tab content </p>

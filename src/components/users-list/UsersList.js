@@ -65,7 +65,7 @@ const UsersList = () => {
   };
   return (
     <>
-      <h1 className={styles.title}>Users list</h1>
+      <h1>Users list</h1>
       <div className={styles.wrapper}>
         <Button isAscending={isAscending} changeOrder={changeOrder} />
         <div>

@@ -28,20 +28,23 @@ const Widget = () => {
   };
 
   return (
-    <div
-      className={styles.container}
-      ref={containerRef}
-      onMouseMove={handleMouseMove}
-    >
-      <div className={styles.box1}>
-        <div className={styles.box1inner} style={{ width: photoWidth }}>
-          <img className={styles.photo1} src={photo1} alt="" />
+    <>
+      <h1>Photo Widget</h1>
+      <div
+        className={styles.container}
+        ref={containerRef}
+        onMouseMove={handleMouseMove}
+      >
+        <div className={styles.box1}>
+          <div className={styles.box1inner} style={{ width: photoWidth }}>
+            <img className={styles.photo1} src={photo1} alt="" />
+          </div>
+        </div>
+        <div className={styles.box2}>
+          <img className={styles.photo2} src={photo2} alt="" />
         </div>
       </div>
-      <div className={styles.box2}>
-        <img className={styles.photo2} src={photo2} alt="" />
-      </div>
-    </div>
+    </>
   );
 };
 

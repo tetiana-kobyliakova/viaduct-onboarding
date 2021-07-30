@@ -1,0 +1,28 @@
+.nav {
+  width: 300px;
+  padding-top: 100px;
+  padding-left: 30px;
+}
+.title {
+  text-transform: uppercase;
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: rgb(36, 108, 198);
+}
+.list {
+  list-style-type: none;
+}
+.item {
+  margin-bottom: 10px;
+}
+.link {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 18px;
+  color: rgb(36, 108, 198);
+}
+
+.activeLink {
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
+}

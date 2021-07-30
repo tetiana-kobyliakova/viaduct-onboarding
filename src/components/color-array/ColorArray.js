@@ -71,23 +71,26 @@ const ColorArray = () => {
   };
 
   return (
-    <div className={classnames([styles.container])}>
-      {newColors.map((item, idx) =>
-        item.map((i, index) => (
-          <div
-            key={index}
-            className={classnames([
-              styles.block,
-              { [styles.highlighted]: i.isHighlighted },
-            ])}
-            style={{ backgroundColor: i.color }}
-            onClick={() => highlightBoxes(idx, index)}
-          >
-            {i.color}
-          </div>
-        ))
-      )}
-    </div>
+    <>
+      <h1>Color Array</h1>
+      <div className={classnames([styles.container])}>
+        {newColors.map((item, idx) =>
+          item.map((i, index) => (
+            <div
+              key={index}
+              className={classnames([
+                styles.block,
+                { [styles.highlighted]: i.isHighlighted },
+              ])}
+              style={{ backgroundColor: i.color }}
+              onClick={() => highlightBoxes(idx, index)}
+            >
+              {i.color}
+            </div>
+          ))
+        )}
+      </div>
+    </>
   );
 };
 

@@ -58,11 +58,11 @@ const Pagination = ({ pages = 20, currentPage = 1, onPageChange }) => {
   console.log(currentPage);
 
   const onNextClick = () => {
-    onPageChange(currentPage + 1);
+    onPageChange(Number(currentPage) + 1);
   };
 
   const onPrevClick = () => {
-    onPageChange(currentPage - 1);
+    onPageChange(Number(currentPage) - 1);
   };
 
   const onElementClick = (i) => {

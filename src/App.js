@@ -30,6 +30,7 @@ function App() {
               </>
             )}
           />
+          <Route path="/pagination/:page" component={Pagination} />
           <Route path="/pagination" component={Pagination} />
           <Route path="/slider" component={Slider} />
           <Route path="/user-list" component={UsersList} />

@@ -11,6 +11,7 @@ import Slider from "./components/slider";
 import Form2 from "./components/form-validation2";
 import Tabs from "./components/tabs";
 import Pagination from "./components/pagination";
+import DropDown from "./components/drop-down/DropDown";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Route path="/zoom-widget" component={ZoomWidget} />
           <Route path="/photo-widget" component={PhotoWidget} />
           <Route path="/color-array" component={ColorArray} />
+          <Route path="/dropdown-menu" component={DropDown} />
         </Switch>
       </Container>
     </div>

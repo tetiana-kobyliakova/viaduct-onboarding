@@ -12,6 +12,7 @@ const links = [
   { link: "/zoom-widget", title: "zoom widget" },
   { link: "/photo-widget", title: "photo widget" },
   { link: "/color-array", title: "color array" },
+  { link: "/dropdown-menu", title: "drop down menu" },
 ];
 const Navigation = () => {
   return (

@@ -1,0 +1,16 @@
+.wrapper {
+  position: relative;
+}
+
+.list {
+  list-style-type: none;
+  position: absolute;
+  top: 20px;
+  width: 100px;
+  background: grey;
+  display: none;
+}
+
+.isOpen {
+  display: block;
+}

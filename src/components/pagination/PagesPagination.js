@@ -1,25 +1,35 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./PagesPagination.module.css";
 import Page from "./Page";
 import Pagination from "./Pagination";
-import api from "./api";
 import { useDispatch, useSelector } from "react-redux";
-import { getUsers, setPage } from "../../reducers/pagination";
+import { getUsers, setPage, setUsers } from "../../reducers/pagination";
 import { usersSelector } from "../../reducers/pagination";
-import store from "../../store";
+import { useHistory, useParams } from "react-router-dom";
 
-const PagesPagination = ({ match, history }) => {
-  const { users, page, isLoading } = useSelector(usersSelector);
-
+const useAsyncRequest = (getFunc, clearFunc) => {
+  const history = useHistory();
   const dispatch = useDispatch();
+  const arr = history.location.pathname.split("/");
+  const page = arr[arr.length - 1];
   React.useEffect(() => {
-    dispatch(getUsers(page));
-  }, [page]);
+    dispatch(getFunc(page));
+    return () => dispatch(clearFunc([]));
+  }, [page, dispatch, getFunc, clearFunc]);
+};
+
+const PagesPagination = () => {
+  const { users, page, isLoading } = useSelector(usersSelector);
+  const dispatch = useDispatch();
+  const params = useParams();
+  const history = useHistory();
+
+  useAsyncRequest(getUsers, setUsers);
 
   React.useEffect(() => {
-    dispatch(setPage(match.params.page || 1));
-    console.log(match);
-  }, [match.params.page]);
+    dispatch(setPage(params.page || 1));
+    //console.log(match);
+  }, [params.page, dispatch]);
   const onPageChange = (page) => {
     history.push(`/pagination/${page}`);
   };

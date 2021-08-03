@@ -14,3 +14,14 @@
 .isOpen {
   display: block;
 }
+
+.wrapper2 {
+  position: relative;
+  top: 100px;
+  left: 200px;
+}
+
+.block {
+  width: 150px;
+  background-color: teal;
+}

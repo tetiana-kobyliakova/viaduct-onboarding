@@ -2,40 +2,45 @@ import React from "react";
 import styles from "./DropDown.module.css";
 import classnames from "classnames";
 
-const useOpenDropDown = (btnRef, dropDownRef) => {
-  const [isOpen, setIsOpen] = React.useState(false);
+const useCloseDropDown = (elemRef, stateManager) => {
   const onDocClick = (e) => {
-    if (e.target === btnRef.current) {
-      setIsOpen(!isOpen);
+    if (elemRef.current.contains(e.target)) {
       return;
     }
-    if (e.target === dropDownRef.current) {
-      return;
-    }
-    setIsOpen(false);
+    stateManager(false);
   };
   React.useEffect(() => {
     document.addEventListener("mousedown", onDocClick);
     return () => document.removeEventListener("mousedown", onDocClick);
-  });
+  }, []);
 
-  return isOpen;
+  return onDocClick;
 };
-const DropDown = () => {
-  const buttonRef = React.useRef(null);
-  const dropDownRef = React.useRef(null);
 
-  const isOpen = useOpenDropDown(buttonRef, dropDownRef);
+const DropDown = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const buttonRef = React.useRef(null);
+  useCloseDropDown(buttonRef, setIsOpen);
+
+  const toggle = () => setIsOpen((isOpen) => !isOpen);
 
   return (
-    <div className={styles.wrapper}>
-      <button ref={buttonRef}>DropDown Menu</button>
-      <div
-        ref={dropDownRef}
-        className={classnames([styles.list, { [styles.isOpen]: isOpen }])}
-      >
-        fgdgd fgdgg gggg fgfgf fgfgf fgfgf fgfgf
-      </div>
+    <div ref={buttonRef} className={styles.wrapper}>
+      <button onClick={toggle}>DropDown Menu</button>
+      <ul className={classnames([styles.list, { [styles.isOpen]: isOpen }])}>
+        <li>
+          <a href="#">one</a>
+        </li>
+        <li>
+          <a href="#">two</a>
+        </li>
+        <li>
+          <a href="#">three</a>
+        </li>
+        <li>
+          <a href="#">four</a>
+        </li>
+      </ul>
     </div>
   );
 };

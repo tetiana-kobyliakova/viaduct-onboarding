@@ -13,6 +13,7 @@ const links = [
   { link: "/photo-widget", title: "photo widget" },
   { link: "/color-array", title: "color array" },
   { link: "/dropdown-menu", title: "drop down menu" },
+  { link: "/hoc", title: "Higher order component" },
 ];
 const Navigation = () => {
   return (

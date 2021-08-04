@@ -12,6 +12,7 @@ import Form2 from "./components/form-validation2";
 import Tabs from "./components/tabs";
 import Pagination from "./components/pagination";
 import DropDown from "./components/drop-down/DropDown";
+import Debounce from "./components/debounce";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route path="/photo-widget" component={PhotoWidget} />
           <Route path="/color-array" component={ColorArray} />
           <Route path="/dropdown-menu" component={DropDown} />
+          <Route path="/debounce" component={Debounce} />
         </Switch>
       </Container>
     </div>

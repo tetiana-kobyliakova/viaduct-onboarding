@@ -1,8 +1,13 @@
 import React from "react";
 import timeHigherOrderComponent from "./TimeHOC";
 import styles from "./TimeComponent.module.css";
-
-const TimeComponent = ({ title, time: { days, hours, mins, secs } }) => {
+import { getTimeComponents } from "./TimeHOC";
+//const dateInit = Date.now();
+const TimeComponent = ({ title, time }) => {
+  const dateInit = React.useMemo(() => Date.now(), []);
+  const timeDiff = React.useMemo(() => time - dateInit, [time]);
+  const { days, hours, mins, secs } = getTimeComponents(timeDiff);
+  console.log(getTimeComponents(timeDiff), time);
   return (
     <div>
       <h1>{title}</h1>

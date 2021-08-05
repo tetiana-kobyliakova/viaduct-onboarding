@@ -14,6 +14,7 @@ const links = [
   { link: "/color-array", title: "color array" },
   { link: "/dropdown-menu", title: "drop down menu" },
   { link: "/debounce", title: "debounce" },
+  { link: "/hoc", title: "Higher order component" },
 ];
 const Navigation = () => {
   return (

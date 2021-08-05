@@ -14,6 +14,7 @@ import Pagination from "./components/pagination";
 import DropDown from "./components/drop-down/DropDown";
 import Debounce from "./components/debounce";
 import TimeComponent from "./components/hoc/TimeComponent";
+import MultiStepForm from "./components/multi-step-form/Form2";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
             path="/hoc"
             render={() => <TimeComponent title={"Time Component"} />}
           />
+          <Route path="/multi-step-form" component={MultiStepForm} />
         </Switch>
       </Container>
     </div>

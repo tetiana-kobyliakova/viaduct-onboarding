@@ -16,35 +16,41 @@ const DebounceFunc = () => {
     debounce((i) => {
       if (!i) {
         setCountries([]);
+        setLoading(false);
         return;
       }
-      setLoading(true);
-      searchRequest(i)
-        .then(setCountries)
-        .catch((err) => {
-          console.log(err);
-        })
-        .finally(setLoading(false));
+
+      setTimeout(() => {
+        searchRequest(i)
+          .then(setCountries)
+          .catch((err) => {
+            console.log(err);
+          })
+          .finally(setLoading(false));
+      }, 2000);
     }, 500),
     []
   );
-  console.log(loading);
+
   const handleInputChange = (e) => {
+    setLoading(true);
     setInputValue(e.target.value);
   };
   React.useEffect(() => handleResult(inputValue), [inputValue]);
+  console.log(loading);
   console.log(countries);
 
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.title}>Functional component</h2>
-      {loading && <p>Loading...</p>}
+
       <input
         className={styles.input}
         type="text"
         value={inputValue}
         onChange={handleInputChange}
       />
+      {loading && <p>Loading...</p>}
 
       {countries?.status === 404 ? (
         <p className={styles.notFound}>Not Found</p>

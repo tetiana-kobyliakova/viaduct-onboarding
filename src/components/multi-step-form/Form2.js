@@ -90,7 +90,7 @@ const CallFormState = ({ state1 = formData1, state2 = formData2 }) => {
     case 3:
       return <Success />;
     default:
-      console.log("This is a multi-step form built with React.");
+      console.log("This is a multi-step form");
   }
 };
 const Form = ({ formState, setFormState, successCB, step, nextStep }) => {

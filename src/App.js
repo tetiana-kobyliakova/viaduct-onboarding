@@ -15,6 +15,7 @@ import DropDown from "./components/drop-down/DropDown";
 import Debounce from "./components/debounce";
 import TimeComponent from "./components/hoc/TimeComponent";
 import MultiStepForm from "./components/multi-step-form/Form2";
+import Transition from "./components/transition";
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
             render={() => <TimeComponent title={"Time Component"} />}
           />
           <Route path="/multi-step-form" component={MultiStepForm} />
+          <Route path="/transition" component={Transition} />
         </Switch>
       </Container>
     </div>

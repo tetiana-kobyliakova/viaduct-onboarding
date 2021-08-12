@@ -16,6 +16,7 @@ const links = [
   { link: "/debounce", title: "debounce" },
   { link: "/hoc", title: "Higher order component" },
   { link: "/multi-step-form", title: "Multi-step form" },
+  { link: "/transition", title: "Transition css" },
 ];
 const Navigation = () => {
   return (

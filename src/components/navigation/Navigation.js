@@ -17,6 +17,7 @@ const links = [
   { link: "/hoc", title: "Higher order component" },
   { link: "/multi-step-form", title: "Multi-step form" },
   { link: "/transition", title: "Transition css" },
+  { link: "/saga", title: "Learn redux-saga" },
 ];
 const Navigation = () => {
   return (

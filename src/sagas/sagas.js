@@ -1,21 +1,8 @@
-import { takeLatest, call, put } from "@redux-saga/core/effects";
+import { all } from "@redux-saga/core/effects";
+
+import { saga as Contacts } from "../reducers/user-contacts";
+import { saga as Profile } from "../reducers/profile";
 
 export function* watcherSaga() {
-  yield takeLatest("API_CALL_REQUEST", workerSaga);
-}
-
-function fetchUser() {
-  return fetch("https://randomuser.me/api/?page=1&results=12&seed=abc").then(
-    (res) => res.json()
-  );
-}
-
-function* workerSaga() {
-  try {
-    const response = yield call(fetchUser);
-    const users = response.results;
-    yield put({ type: "API_CALL_SUCCESS", users });
-  } catch (error) {
-    yield put({ type: "API_CALL_FAILURE", error });
-  }
+  yield all([Contacts(), Profile()]); //;
 }

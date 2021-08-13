@@ -1,0 +1,26 @@
+.profile {
+  width: 30%;
+}
+
+.title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.image {
+  display: block;
+  margin: 20px auto;
+}
+
+.info {
+  margin-bottom: 10px;
+}
+
+.profileInfo {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.error {
+  color: red;
+}
